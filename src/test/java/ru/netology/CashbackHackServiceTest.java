@@ -5,6 +5,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class CashbackHackServiceTest {
+
     @Test
     public void shouldTestRemainIf800() {
         CashbackHackService cashbackHackService = new CashbackHackService();
@@ -47,11 +48,16 @@ public class CashbackHackServiceTest {
         int amount = 1999;
         int expected = 1;
         int actual = cashbackHackService.remain(amount);
-        assertEquals(expected, actual);
+        assertEquals (expected, actual);
     }
 
-// Если пользователь купил ровно на 1000 рублей, то приложение не должно ему говорить,
-// что нужно купить ещё на 1000. Тест не заводил,чтобы тесты все проходили. если нужно сделаю.
-// Пример теста в ветке testng
+    @Test
+    public void shouldTestRemainIs1000() {
+        CashbackHackService cashbackHackService = new CashbackHackService();
+        int amount = 1000;
+        int expected = 0;
+        int actual = cashbackHackService.remain(amount);
+        assertEquals(expected, actual,"При покупке на 1000, сервис считает не правильно, выдает 1000, а нужно 0");
+    }
 
 }
