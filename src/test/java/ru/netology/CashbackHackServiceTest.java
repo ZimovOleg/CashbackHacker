@@ -14,6 +14,8 @@ public class CashbackHackServiceTest {
         assertEquals(actual, expected);
     }
 
+
+
     @Test
     public void shouldTestRemainIs999() {
         CashbackHackService cashbackHackService = new CashbackHackService();
@@ -49,7 +51,6 @@ public class CashbackHackServiceTest {
         int actual = cashbackHackService.remain(amount);
         assertEquals(actual, expected);
     }
-
 
     @Test
     public void shouldTestRemainIs1000() {
